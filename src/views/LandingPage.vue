@@ -113,39 +113,76 @@ export default {
   width: 100%;
 }
 
+
+//.vue-typer {
+//  color: #263238 !important;
+//  font-size: 3rem;
+//  font-weight: 900;
+//  line-height: 1.2;
+//  width: 100%;
+//  min-height: 30vh; // Increased height for better spacing
+//  display: flex;
+//  align-items: center; // Center the text vertically
+//  justify-content: center; // Center the text horizontally
+//  text-align: center;
+//
+//  @media screen and (min-width: 1920px) {
+//    font-size: 4rem;
+//    min-height: 35vh;
+//  }
+//  @media screen and (max-width: 1024px) {
+//    font-size: 2.8rem;
+//    min-height: 28vh;
+//  }
+//  @media screen and (max-width: 768px) {
+//    font-size: 2.5rem;
+//    min-height: 25vh;
+//  }
+//  @media screen and (max-width: 576px) {
+//    font-size: 2.3rem;
+//    min-height: 22vh;
+//  }
+//  @media screen and (max-width: 375px) {
+//    font-size: 2rem;
+//    min-height: 20vh;
+//  }
+//}
+
 .vue-typer {
   color: #263238 !important;
   font-size: 3rem;
   font-weight: 900;
   line-height: 1.2;
   width: 100%;
-  min-height: 30vh; // Increased height for better spacing
+  white-space: nowrap; // Prevents line breaks
+  overflow: hidden;
+  text-overflow: ellipsis; // Handles overflow gracefully
+  min-height: 30vh; // Ensures proper spacing
   display: flex;
-  align-items: center; // Center the text vertically
-  justify-content: center; // Center the text horizontally
+  align-items: center;
+  justify-content: center;
   text-align: center;
 
-  @media screen and (min-width: 1920px) {
-    font-size: 4rem;
-    min-height: 35vh;
-  }
   @media screen and (max-width: 1024px) {
     font-size: 2.8rem;
-    min-height: 28vh;
   }
+
   @media screen and (max-width: 768px) {
-    font-size: 2.5rem;
-    min-height: 25vh;
+    font-size: 2.2rem;
+    white-space: normal; // Allow wrapping but with controlled spacing
   }
+
   @media screen and (max-width: 576px) {
-    font-size: 2.3rem;
-    min-height: 22vh;
+    font-size: 1.8rem;
+    white-space: normal; // Allows natural wrapping
   }
+
   @media screen and (max-width: 375px) {
-    font-size: 2rem;
-    min-height: 20vh;
+    font-size: 1.5rem;
+    text-align: center; // Ensures centered alignment
   }
 }
+
 
 .typer-container {
   display: flex;
@@ -171,4 +208,5 @@ img {
     max-width: 100%;
   }
 }
+
 </style>

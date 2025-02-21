@@ -52,7 +52,7 @@ export default {
 <template>
   <div class="section-sculptor">
     <p class="head-txt mx-10 pt-36">Projects</p>
-    <p class="sub-txt mx-10 pt-10">Here are some of the projects I've worked on.</p>
+
 <!--    <button-component button-text="Book Now" width="300px" depressed class="my-14 mx-10 button" outlined/>-->
 
     <div class="cards-container">
@@ -88,6 +88,7 @@ export default {
   line-height: 38px;
   letter-spacing: 0;
   text-align: left;
+  margin-bottom: 4rem;
   color: #ffffff;
 }
 .sub-txt{

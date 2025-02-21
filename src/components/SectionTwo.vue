@@ -28,7 +28,7 @@ export default {
 <template>
   <div class="section-sculptor flex flex-col lg:flex-row items-center">
     <!-- Text Content -->
-    <section class="text-container mx-16 px-4 md:px-10 lg:px-16 w-full lg:w-1/2 fade-in">
+    <section class="text-container  lg:px-16 w-full lg:w-1/2 fade-in">
       <p class="head-txt">My Journey in Tech</p>
 <!--      <p class="sub-txt pt-6 md:pt-10">-->
 <!--        Software Engineer-->
@@ -54,7 +54,7 @@ export default {
       <img
           src="@/assets/blank-bg.png"
           alt="Glory Ihueze"
-          class="image-on-top "
+          class="image-on-top"
       />
     </div>
   </div>
@@ -63,26 +63,50 @@ export default {
 <style scoped lang="scss">
 .section-sculptor {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* Centers children horizontally */
+  align-items: center; /* Centers children vertically */
   min-height: 60vh;
   padding: 50px 20px;
   background: #bcc5f2;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Ensures responsiveness */
+  text-align: center; /* Helps with text alignment */
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+  }
+  @media (max-width: 575px) { /* Only for mobile */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 }
 
 .text-container {
   width: 100%;
   max-width: 650px;
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    align-items: flex-start; /* Left align content for web */
+    text-align: left;
+  }
+
+  @media (max-width: 767px) {
+    align-items: center; /* Center content for mobile */
+    text-align: center;
+  }
 }
 
 .head-txt {
-  font-size: 2rem;
-  font-weight: 600;
-  color: #0732ef;
-  line-height: 1.2;
-}
+    font-size: 2rem;
+    font-weight: 600;
+    color: #0732ef;
+    line-height: 1.2;
+    width: 100%; /* Ensures text spans full width */
+  }
+
+
 
 .sub-txt {
   font-size: 1.5rem;
@@ -101,8 +125,20 @@ export default {
   width: 100%;
   max-width: 500px;
   margin-top: 2rem;
-}
+  display: flex;
+  justify-content: center; /* Centers image */
+  align-items: center;
+  @media (max-width: 768px) {
+    justify-content: center;
 
+  }
+  @media (max-width: 575px) { /* Only for mobile */
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+  }
+
+}
 .image-on-top {
   width: 100%;
   max-width: 100%;
@@ -135,133 +171,6 @@ export default {
   }
 }
 
-@media (max-width: 768px) {
-  .section-sculptor {
-    flex-direction: column;
-    text-align: center;
-  }
-  .text-container {
-    text-align: center;
-  }
-}
 </style>
 
 
-
-<!--<template>-->
-<!--  <div class="section-sculptor">-->
-<!--    <section class="mx-16">-->
-<!--      <p class="head-txt">The Journey to Rises</p>-->
-<!--      <div class="text-container">-->
-<!--        <p class="sub-txt pt-10">-->
-<!--          How we rose up to become leaders in the consulting industry-->
-<!--        </p>-->
-<!--        <p class="paragraph">-->
-<!--          I am a paragraph. Click here to add your own text and edit me. It's-->
-<!--          easy. Just click "Edit Text" or double click to add your own content-->
-<!--          and make changes to the font.-->
-<!--        </p>-->
-<!--      </div>-->
-<!--      <button-component-->
-<!--        button-text="About Us"-->
-<!--        is-outlined-->
-<!--        width="300px"-->
-<!--        depressed-->
-<!--        class="btn my-14"-->
-<!--      />-->
-<!--    </section>-->
-<!--    <div class="image-container">-->
-<!--      <img-->
-<!--        src="@/assets/image 2.png"-->
-<!--        alt="Image"-->
-<!--        class="image-on-top fade-in"-->
-<!--      />-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</template>-->
-
-<!--<style scoped lang="scss">-->
-<!--.section-sculptor {-->
-<!--  display: flex;-->
-<!--  align-items: center;-->
-<!--  justify-content: left;-->
-<!--  min-height: 60vh;-->
-<!--  padding: 100px 30px;-->
-<!--  background: #bcc5f2;-->
-<!--}-->
-<!--.head-txt {-->
-<!--  font-family: "Raleway", sans-serif !important;-->
-<!--  font-size: 75px;-->
-<!--  font-style: normal;-->
-<!--  font-weight: 600;-->
-<!--  line-height: 38px;-->
-<!--  letter-spacing: 0;-->
-<!--  text-align: left;-->
-<!--  color: #0732ef;-->
-<!--  width: 100%;-->
-<!--}-->
-<!--.sub-txt {-->
-<!--  font-family: Raleway, sans-serif;-->
-<!--  font-size: 24px;-->
-<!--  font-style: normal;-->
-<!--  font-weight: 600;-->
-<!--  line-height: 38px;-->
-<!--  letter-spacing: 0;-->
-<!--  text-align: left;-->
-<!--  color: #0732ef;-->
-<!--}-->
-<!--.paragraph {-->
-<!--  font-family: Raleway, sans-serif;-->
-<!--  font-size: 20px;-->
-<!--  font-style: normal;-->
-<!--  font-weight: 400;-->
-<!--  line-height: 38px;-->
-<!--  letter-spacing: 0;-->
-<!--  text-align: left;-->
-<!--  color: #0732ef;-->
-<!--  width: 650px;-->
-<!--}-->
-<!--.image-container {-->
-<!--  position: relative;-->
-<!--  width: 40%;-->
-<!--  max-width: 40%;-->
-<!--}-->
-
-<!--.image-on-top {-->
-<!--  position: relative;-->
-<!--  width: 100%;-->
-<!--  max-width: 100%;-->
-<!--  display: block;-->
-<!--  z-index: 1;-->
-<!--  border-radius: 20px;-->
-<!--  top: 15rem;-->
-<!--}-->
-<!--.theme--light.v-btn.v-btn--has-bg {-->
-<!--  background-color: #bcc5f2;-->
-<!--}-->
-<!--.theme--light.v-btn.v-btn--has-bg:hover {-->
-<!--  background: #0732ef;-->
-<!--  color: #ffffff;-->
-<!--}-->
-<!--.btn {-->
-<!--  border: solid 1px #0732ef;-->
-<!--  font-family: Raleway, sans-serif;-->
-<!--  font-weight: 100;-->
-<!--  font-size: 18px;-->
-<!--  color: #0732ef;-->
-<!--}-->
-<!--.fade-in {-->
-<!--  opacity: 0;-->
-<!--  transform: translateY(100px);-->
-<!--  transition: opacity 2s ease-out, transform 2s ease-out;-->
-<!--}-->
-
-<!--.fade-in.active {-->
-<!--  opacity: 1;-->
-<!--  transform: translateY(0);-->
-<!--}-->
-<!--//.btn:hover{-->
-<!--//  background: #0732ef;-->
-<!--//  color: #ffffff;-->
-<!--//}-->
-<!--</style>-->
